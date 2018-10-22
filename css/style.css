@@ -5,8 +5,8 @@
 }
 
 html {
-  --basicFont: 'Lato', arial, sans-serif;
-  --headersFont: 'Merriweather', serif;
+  --basicFont: 'Lato', sans-serif;
+  --headersFont: 'Merriweather', 'Georgia', serif;
   --basicFontColor: #AC9664;
   --secondColor: #1c3146;
   --leadColor: #204734;
@@ -56,13 +56,15 @@ nav a {
   padding: 1.5rem;
   border-bottom: 1px solid var(--basicFontColor);
   border-left: 1px solid var(--basicFontColor);
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
   color: var(--basicFontColor);
   font-size: 1.6rem;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-  transition: .2s;
+  transition: all .1s;
 }
 
 nav a:hover {
@@ -99,4 +101,54 @@ div.bg {
 .welcome p:last-child {
   bottom: 15vh;
   right: 20vw;
+}
+
+/* .arrowDown {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+} */
+
+.arrowDown i {
+  position: absolute;
+  top: 55%;
+  left: 15%;
+  animation: fly 3s .5s linear;
+  color: var(--basicFontColor);
+  font-size: 3rem;
+}
+
+@keyframes fly {
+  0% {
+    top: 55%;
+    left: 15%;
+  }
+  5% {
+    top: 42%;
+    left: 31%;
+  }
+  25% {
+    top: 29%;
+    left: 38%;
+  }
+  45% {
+    top: 27%;
+    left: 47%;
+  }
+  65% {
+    top: 29%;
+    left: 63%;
+  }
+  85% {
+    top: 42%;
+    left: 79%;
+  }
+  95% {
+    top: 53%;
+    left: 87%;
+  }
+  100% {
+    top: 95%;
+    left: 92%;
+  }
 }

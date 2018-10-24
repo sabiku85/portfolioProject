@@ -113,9 +113,9 @@ div.bg {
   position: absolute;
   top: 55%;
   left: 15%;
-  animation: fly 3s .5s linear;
+  animation: fly 3s .5s steps(50) both;
   color: var(--basicFontColor);
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 @keyframes fly {
@@ -123,32 +123,27 @@ div.bg {
     top: 55%;
     left: 15%;
   }
-  5% {
-    top: 42%;
-    left: 31%;
+  20% {
+    top: 45%;
+    left: 30%;
   }
-  25% {
-    top: 29%;
-    left: 38%;
+  40% {
+    top: 45%;
+    left: 45%;
   }
-  45% {
-    top: 27%;
-    left: 47%;
+  60% {
+    top: 60%;
+    left: 60%;
+    transform: rotate(90deg);
   }
-  65% {
-    top: 29%;
-    left: 63%;
-  }
-  85% {
-    top: 42%;
-    left: 79%;
-  }
-  95% {
-    top: 53%;
-    left: 87%;
+  80% {
+    top: 75%;
+    left: 75%;
+    transform: rotate(120deg);
   }
   100% {
-    top: 95%;
-    left: 92%;
+    top: 85%;
+    left: 90%;
+    transform: rotate(145deg);
   }
 }

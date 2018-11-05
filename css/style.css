@@ -27,6 +27,7 @@ header {
   position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 nav {
@@ -105,43 +106,44 @@ div.bg {
 
 /* .arrowDown {
   position: relative;
-  width: 3rem;
-  height: 3rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
 } */
 
 .arrowDown i {
   position: absolute;
-  top: 85%;
-  left: 90%;
-  animation: rotate 1s 1s both, showUp 1.5s 2s infinite;
+  top: 80%;
+  left: 85%;
+  animation: rotate 1s 1s both ease-in, showUp 1s 2s alternate both steps(100) infinite;
   color: var(--basicFontColor);
-  font-size: 4rem;
+  border: 3px solid var(--secondColor);
+  border-radius: 50%;
+  font-size: 5rem;
+}
+
+.arrowDown i:hover {
+  animation: none;
 }
 
 @keyframes rotate {
   0% {
-    transform: rotate(90deg);
+    transform: rotate(90deg) scale(1.3);
   }
   100% {
-    transform: rotate(450deg);
+    transform: rotate(450deg) scale(1);
   }
-  /* 100% {
-    transform: rotate(90deg);
-  } */
 }
 
 @keyframes showUp {
   0% {
-    transform: scale(1);
+    box-shadow: 0 0 2px 3px var(--basicFontColor);
   }
   50% {
-    transform: scale(1.5);
-  }
-  55% {
-    transform: scale(1.5);
+    box-shadow: 0 0 4px 6px #7F6F4A;
   }
   100% {
-    transform: scale(1);
+    box-shadow: 0 0 6px 9px #E5C885;
   }
 }
 

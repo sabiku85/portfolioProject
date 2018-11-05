@@ -5,8 +5,8 @@
 }
 
 html {
-  --basicFont: 'Lato', arial, sans-serif;
-  --headersFont: 'Merriweather', serif;
+  --basicFont: 'Lato', sans-serif;
+  --headersFont: 'Merriweather', 'Georgia', serif;
   --basicFontColor: #AC9664;
   --secondColor: #1c3146;
   --leadColor: #204734;
@@ -27,6 +27,7 @@ header {
   position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 nav {
@@ -56,13 +57,15 @@ nav a {
   padding: 1.5rem;
   border-bottom: 1px solid var(--basicFontColor);
   border-left: 1px solid var(--basicFontColor);
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
   color: var(--basicFontColor);
   font-size: 1.6rem;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-  transition: .2s;
+  transition: all .1s;
 }
 
 nav a:hover {
@@ -99,4 +102,66 @@ div.bg {
 .welcome p:last-child {
   bottom: 15vh;
   right: 20vw;
+}
+
+/* .arrowDown {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+} */
+
+.arrowDown i {
+  position: absolute;
+  top: 80%;
+  left: 85%;
+  animation: rotate .5s 1s both ease-in, showUp 1s 2s alternate both steps(100) infinite;
+  color: var(--basicFontColor);
+  border: 3px solid var(--secondColor);
+  border-radius: 50%;
+  font-size: 5rem;
+  transition: .5s;
+}
+
+.arrowDown i:hover {
+  cursor: pointer;
+  animation-play-state: paused;
+  text-shadow: 0 0 6px var(--mainBgColor);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(90deg) scale(1.3);
+  }
+  100% {
+    transform: rotate(810deg) scale(1);
+  }
+}
+
+@keyframes showUp {
+  0% {
+    box-shadow: 0 0 2px 3px var(--basicFontColor);
+  }
+  50% {
+    box-shadow: 0 0 4px 6px #7F6F4A;
+  }
+  100% {
+    box-shadow: 0 0 6px 9px #E5C885;
+  }
+}
+
+@media (max-width: 900px) {
+  .welcome p:last-child {
+    right: 10vw;
+  }
+  @media (any-hover: none) {
+    nav a {
+      border: 1px solid var(--basicFontColor);
+    }
+    .arrowDown i {
+      font-size: 0;
+      border: none;
+      animation: none;
+    }
+  }
 }

@@ -90,26 +90,20 @@ div.bg {
 .welcome p {
   position: absolute;
   font-family: var(--headersFont);
-  font-size: 5rem;
   color: var(--basicFontColor);
 }
 
 .welcome p:first-child {
   bottom: 30vh;
   right: 10vw;
+  font-size: 6rem;
 }
 
 .welcome p:last-child {
   bottom: 15vh;
   right: 20vw;
+  font-size: 4rem;
 }
-
-/* .arrowDown {
-  position: relative;
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
-} */
 
 .arrowDown i {
   position: absolute;
@@ -120,7 +114,7 @@ div.bg {
   border: 3px solid var(--secondColor);
   border-radius: 50%;
   font-size: 5rem;
-  transition: .5s;
+  transition: .2s;
 }
 
 .arrowDown i:hover {
@@ -151,17 +145,102 @@ div.bg {
 }
 
 @media (max-width: 900px) {
-  .welcome p:last-child {
-    right: 10vw;
+  nav a {
+    font-size: 1.5rem;
   }
-  @media (any-hover: none) {
-    nav a {
-      border: 1px solid var(--basicFontColor);
+  div.welcome {
+    background: url('../images/medium.jpg') no-repeat left /cover;
+  }
+  .welcome p:first-child {
+    font-size: 5rem;
+  }
+  .welcome p:last-child {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 700px) {
+  nav {
+    right: 7vw;
+  }
+  .welcome p:first-child {
+    right: 7vw;
+  }
+  .welcome p:last-child {
+    right: 7vw;
+  }
+}
+
+@media (max-width: 640px) {
+  nav {
+    top: 6vh;
+    width: 100%;
+    max-height: 40vh;
+  }
+  nav ul {
+    width: 100%;
+  }
+  nav li {
+    margin: 1.5vh auto;
+    width: 90vw;
+    padding-right: 0;
+  }
+  nav li::before, nav li::after {
+    content: "";
+    display: block;
+    border: 2px solid var(--basicFontColor);
+    border-radius: 50%;
+  }
+  div.welcome {
+    background: url('../images/medium.jpg') no-repeat left /cover;
+  }
+  .welcome p {
+    padding: 0 5vw;
+    text-align: right;
+  }
+  .welcome p:first-child {
+    bottom: 20vh;
+    right: 10vw;
+    font-size: 4rem;
+    padding-bottom: 3vh;
+  }
+  .welcome p:last-child {
+    bottom: 10vh;
+    right: 10vw;
+    font-size: 2rem;
+  }
+  @media (orientation: landscape) {
+    nav {
+      width: 50%;
     }
-    .arrowDown i {
-      font-size: 0;
-      border: none;
-      animation: none;
+    nav li {
+      width: 45vw;
     }
+    .welcome p:first-child {
+      bottom: 45vh;
+      right: 50vw;
+      text-align: center;
+      font-size: 2.5rem;
+      transform: rotate(-20deg);
+    }
+    .welcome p:last-child {
+      bottom: 30vh;
+      right: 50vw;
+      line-height: 2rem;
+      text-align: center;
+      font-size: 1.2rem;
+      transform: rotate(-20deg);
+    }
+  }
+}
+
+@media (any-hover: none) {
+  nav a {
+    border: 1px solid var(--basicFontColor);
+  }
+  .arrowDown i {
+    font-size: 0;
+    border: none;
+    animation: none;
   }
 }
